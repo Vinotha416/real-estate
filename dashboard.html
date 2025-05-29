@@ -1,0 +1,152 @@
+<?php
+session_start();
+
+// Check if the user is logged in
+if (!isset($_SESSION['user'])) {
+    header("Location: login.php"); // Redirect to login page if not logged in
+    exit;
+}
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Estate Management Dashboard</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .background {
+            background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtHGvvkP8iLnUj7TD6ymgA5YiSgcej9wOkAg&s') no-repeat center center/cover;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .welcome-banner {
+            width: 100%;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+        }
+
+        .welcome-banner h1 {
+            font-size: 2.5rem;
+            margin: 0;
+        }
+
+        .nav-container {
+            width: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 10px 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 0;
+        }
+
+        .nav-container a,
+        .nav-container button {
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 1rem;
+            color: white;
+            background: #3498db;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .nav-container a:hover,
+        .nav-container button:hover {
+            background: #2980b9;
+        }
+
+        .middle-content {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            color: white;
+            max-width: 500px;
+            margin: 20px;
+        }
+
+        .middle-content h2 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .middle-content p {
+            font-size: 1.2rem;
+            line-height: 1.5;
+        }
+
+        .footer {
+            background: rgba(135, 206, 235, 0.8);
+            color: black;
+            padding: 20px;
+            text-align: center;
+            font-size: 1.2rem;
+            margin-top: auto;
+        }
+
+        .footer a {
+            color: #FF5733;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="background">
+        <!-- Welcome Banner -->
+        <div class="welcome-banner">
+            <h1>Welcome to Real Estate Dashboard</h1>
+        </div>
+
+        <!-- Navigation links -->
+        <div class="nav-container">
+            <button onclick="window.location.href='http://localhost:8080/real_estate_db/home.html'">Home</button>
+            <button onclick="window.location.href='http://localhost:8080/real_estate_db/about.html'">About Us</button>
+            <button onclick="window.location.href='http://localhost:8080/real_estate_db/register.php'">Register</button>
+            <button onclick="window.location.href='http://localhost:8080/real_estate_db/contact.php'">Contact Us</button>
+            <button onclick="window.location.href='http://localhost:8080/real_estate_db/login.php'">Login</button>
+            <button onclick="window.location.href='http://localhost:8080/real_estate_db/client.php'">Manage Clients</button>
+            <button onclick="window.location.href='http://localhost:8080/real_estate_db/agents.php'">Agents</button>
+            <button onclick="window.location.href='http://localhost:8080/real_estate_db/property.php'">Property Listings</button>
+            <button onclick="window.location.href='http://localhost:8080/real_estate_db/transactions.php'">Transactions</button>
+            <button onclick="window.location.href='http://localhost:8080/real_estate_db/payments.php'">Payments</button>
+            <button onclick="window.location.href='http://localhost:8080/real_estate_db/report.php'">Reports</button>
+        </div>
+
+        <!-- Middle Content -->
+        <div class="middle-content">
+            <h2>Manage Your Real Estate Operations</h2>
+            <p>Navigate through the menu to access various features.</p>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <div class="footer">
+        <p>Join Us Today!<br>
+        Register now to access all the amazing features of our platform, including property management, transactions, and payments.<br>
+        <a href="http://localhost:8080/real_estate_db/register.php">Register Now</a></p>
+    </div>
+</body>
+</html>

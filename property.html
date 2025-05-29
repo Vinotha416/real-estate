@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Details - Real Estate Management</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('https://source.unsplash.com/1920x1080/?real-estate,building') no-repeat center center/cover; /* Background image */
+            color: white;
+        }
+
+        header {
+            background: rgba(0, 0, 0, 0.6); /* Semi-transparent black header */
+            color: white;
+            padding: 20px 10px;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .property-list {
+            max-width: 1200px;
+            margin: 20px auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .property-card {
+            background: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            padding: 20px;
+        }
+
+        .property-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .property-card h2 {
+            margin: 10px 0;
+            color: #007bff;
+        }
+
+        .property-card p {
+            margin: 10px 0;
+            color: #333;
+        }
+
+        .options button {
+            margin: 5px;
+            padding: 10px 20px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        .options button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Property Details</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="property-list">
+        <!-- Property Cards -->
+        <div class="property-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRZjpB09D6btmF8VH9aavhWKT23ZUBTJCHEg&s" alt="Modern Apartment">
+            <h2>Modern Apartment</h2>
+            <p><strong>Location:</strong> New York</p>
+            <p><strong>Price:</strong> $500,000</p>
+            <div class="options">
+                <button onclick="window.location.href='payment.html'">Proceed to Payment</button>            </div>
+        </div>
+        <div class="property-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJzQvkXtin6hcWzgw65uaFtNYen2ohJYrQOg&s" alt="Property Image" alt="Luxury Villa">
+            <h2>Luxury Villa</h2>
+            <p><strong>Location:</strong> Los Angeles</p>
+            <p><strong>Price:</strong> $1,200,000</p>
+            <div class="options">
+                <button onclick="window.location.href='payment.html'">Proceed to Payment</button>            </div>
+        </div>
+        <div class="property-card">
+            <img src= "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTr1cNVGbNQrKvcv4AECzUtGCorFeutlOQDeA&s" alt="Cozy Cottage">
+            <h2>Cozy Cottage</h2>
+            <p><strong>Location:</strong> Texas</p>
+            <p><strong>Price:</strong> $350,000</p>
+            <div class="options">
+                <button onclick="window.location.href='payment.html'">Proceed to Payment</button>            </div>
+        </div>
+        <div class="property-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRZjpB09D6btmF8VH9aavhWKT23ZUBTJCHEg&s" alt="Penthouse Suite">
+            <h2>Penthouse Suite</h2>
+            <p><strong>Location:</strong> Miami</p>
+            <p><strong>Price:</strong> $2,000,000</p>
+            <div class="options">
+                <button onclick="window.location.href='payment.html'">Proceed to Payment</button>            </div>
+        </div>
+        <div class="property-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQYlWq8Mhl7_pIuPfb_B3pg_WzmOfR8g4JiQ&s" alt="Beachfront House">
+            <h2>Beachfront House</h2>
+            <p><strong>Location:</strong> Florida</p>
+            <p><strong>Price:</strong> $950,000</p>
+            <div class="options">
+                <button onclick="window.location.href='payment.html'">Proceed to Payment</button>            </div>
+        </div>
+        <div class="property-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRg559UCluttMW2pAbLffwnPgFl74d0c19kqQ&s" alt="Suburban Home">
+            <h2>Suburban Home</h2>
+            <p><strong>Location:</strong> Illinois</p>
+            <p><strong>Price:</strong> $400,000</p>
+            <div class="options">
+                <button onclick="window.location.href='payment.html'">Proceed to Payment</button>            </div>
+        </div>
+        <div class="property-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrjfEiEtrH88dt91l7Sra1RGfYoQPRlOF3ig&s" alt="Urban Studio">
+            <h2>Urban Studio</h2>
+            <p><strong>Location:</strong> San Francisco</p>
+            <p><strong>Price:</strong> $750,000</p>
+            <div class="options">
+                <button onclick="window.location.href='payment.html'">Proceed to Payment</button>            </div>
+        </div>
+        <div class="property-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRZjpB09D6btmF8VH9aavhWKT23ZUBTJCHEg&s" alt="Luxury Bungalow">
+            <h2>Luxury Bungalow</h2>
+            <p><strong>Location:</strong> Seattle</p>
+            <p><strong>Price:</strong> $1,100,000</p>
+            <div class="options">
+                <button onclick="window.location.href='payment.html'">Proceed to Payment</button>            </div>
+        </div>
+        <div class="property-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlmb-vuP7IOq1XwXDNUfwjIyX7P615J9taoQ&s" alt="Hilltop House">
+            <h2>Hilltop House</h2>
+            <p><strong>Location:</strong> Colorado</p>
+            <p><strong>Price:</strong> $650,000</p>
+            <div class="options">
+                <button onclick="window.location.href='payment.html'">Proceed to Payment</button>            </div>
+        </div>
+        <div class="property-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQI_FcNRN_58LerKU_yNcq8r9ZA1icc6VkArQ&s"alt="Farmhouse">
+            <h2>Farmhouse</h2>
+            <p><strong>Location:</strong> Iowa</p>
+            <p><strong>Price:</strong> $300,000</p>
+            <div class="options">
+                <button onclick="window.location.href='payment.html'">Proceed to Payment</button>            </div>
+        </div>
+        <div class="property-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0ilR5aPfLmQ4s-EBC_yHBUkNZW_FEGZUecg&s" alt="Classic Mansion">
+            <h2>Classic Mansion</h2>
+            <p><strong>Location:</strong> Georgia</p>
+            <p><strong>Price:</strong> $1,800,000</p>
+            <div class="options">
+                <button onclick="window.location.href='payment.html'">Proceed to Payment</button>            </div>
+        </div>
+        <div class="property-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzcNktN1HBUzIOo9FgCh5DF8ZEJvKMuWNO4w&s" alt="Property Image" alt="Modern Condo">
+            <h2>Modern Condo</h2>
+            <p><strong>Location:</strong> Chicago</p>
+            <p><strong>Price:</strong> $450,000</p>
+            <div class="options">
+                <button onclick="window.location.href='payment.html'">Proceed to Payment</button>            </div>
+        </div>
+    </div>
+</body>
+</html>

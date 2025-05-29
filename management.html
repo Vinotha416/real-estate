@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Management</title>
+    <style>
+        /* Property Listing Page Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKhRPlqZB_vHuA3_3_KuicA-TwcxZeE7cueA&s') no-repeat center center/cover;
+            font-family: Arial, sans-serif;
+            color: #333;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        .heading {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .heading h1 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+        .properties {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .property-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            text-align: center;
+        }
+        .property-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .property-card .info {
+            padding: 15px;
+        }
+        .property-card .info h2 {
+            font-size: 20px;
+            margin: 10px 0;
+        }
+        .property-card .info p {
+            margin: 5px 0;
+        }
+        .property-card .info button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .property-card .info button:hover {
+            background-color: #45a049;
+        }
+    </style>
+    <script>
+        function viewDetails(propertyName, location, price, imageUrl) {
+            // Save selected property details to sessionStorage
+            sessionStorage.setItem('propertyName', propertyName);
+            sessionStorage.setItem('location', location);
+            sessionStorage.setItem('price', price);
+            sessionStorage.setItem('imageUrl', imageUrl);
+
+            // Redirect to the property details page
+            window.location.href = "property-details.html";
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="heading">
+            <h1>Explore Our Exclusive Properties</h1>
+            <p>Discover the finest properties handpicked for you. Find your dream home today!</p>
+        </div>
+        <div class="properties">
+            <!-- Property Cards -->
+            <div class="property-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTr1cNVGbNQrKvcv4AECzUtGCorFeutlOQDeA&s" alt="Luxury Villa">
+                <div class="info">
+                    <h2>Luxury Villa</h2>
+                    <p>Location: Los Angeles</p>
+                    <p>Price: $1,000,000</p>
+                    <button onclick="viewDetails('Luxury Villa', 'Los Angeles', '$1,000,000', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTr1cNVGbNQrKvcv4AECzUtGCorFeutlOQDeA&s')">View Details</button>
+                </div>
+            </div>
+            <div class="property-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzcNktN1HBUzIOo9FgCh5DF8ZEJvKMuWNO4w&s" alt="Cozy Apartment">
+                <div class="info">
+                    <h2>Cozy Apartment</h2>
+                    <p>Location: New York</p>
+                    <p>Price: $500,000</p>
+                    <button onclick="viewDetails('Cozy Apartment', 'New York', '$500,000', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzcNktN1HBUzIOo9FgCh5DF8ZEJvKMuWNO4w&s')">View Details</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

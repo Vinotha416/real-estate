@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Management</title>
+    <style>
+        /* General styling */
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpbcoWyN3YagoJpoZn5y58V-DCOXgL1tzzfw&s'); /* Replace with your image URL */
+            background-size: cover;
+            background-position: center;
+            font-family: 'Roboto', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.9); /* Semi-transparent background for content readability */
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+        .container h1 {
+            font-size: 28px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .container table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        .container table, th, td {
+            border: 1px solid #ccc;
+        }
+        .container th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        .container th {
+            background-color: #007BFF;
+            color: white;
+        }
+        .container button {
+            padding: 10px 20px;
+            background-color: #28a745;
+            border: none;
+            color: white;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+        .container button:hover {
+            background-color: #218838;
+        }
+        .error-message {
+            color: red;
+            margin-top: 20px;
+            font-size: 16px;
+            display: none; /* Initially hidden */
+        }
+        /* Modal styling */
+        #edit-client-modal {
+            display: none;
+            position: fixed;
+            top: 20%;
+            left: 50%;
+            transform: translate(-50%, -20%);
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            z-index: 100;
+            text-align: left;
+            width: 400px;
+        }
+        #edit-client-modal label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+        }
+        #edit-client-modal input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        #edit-client-modal button {
+            margin-right: 10px;
+            padding: 10px 20px;
+            border: none;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #edit-client-modal .save-btn {
+            background-color: #28a745;
+        }
+        #edit-client-modal .cancel-btn {
+            background-color: #dc3545;
+        }
+        #edit-client-modal .save-btn:hover {
+            background-color: #218838;
+        }
+        #edit-client-modal .cancel-btn:hover {
+            background-color: #c82333;
+        }
+    </style>
+    <script>
+        let clients = [
+            { id: 1, name: "John Doe", contact: "+123456789" },
+            { id: 2, name: "Jane Smith", contact: "+987654321" }
+        ];
+        let currentClientId = null;
+
+        const userRole = 'Administrator'; // Example role; change to test role-based functionality
+
+        function openEditModal(clientId) {
+            currentClientId = clientId;
+            const client = clients.find(c => c.id === clientId);
+            document.getElementById("client-name").value = client.name;
+            document.getElementById("client-contact").value = client.contact;
+            document.getElementById("edit-client-modal").style.display = "block";
+        }
+
+        function saveClient() {
+            const name = document.getElementById("client-name").value;
+            const contact = document.getElementById("client-contact").value;
+
+            const client = clients.find(c => c.id === currentClientId);
+            client.name = name;
+            client.contact = contact;
+
+            alert("Client details updated successfully!");
+            closeModal();
+            console.log(clients); // Debugging: View updated data
+        }
+
+        function closeModal() {
+            document.getElementById("edit-client-modal").style.display = "none";
+        }
+
+        function addClient() {
+            const errorMessage = document.getElementById('error-message');
+            if (userRole === 'Administrator' || userRole === 'Realtor') {
+                alert('Add Client Functionality Coming Soon!');
+            } else {
+                errorMessage.style.display = 'block'; // Show error message for unauthorized users
+                errorMessage.textContent = 'You do not have permission to add clients.';
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Manage Clients</h1>
+        <p>View and manage your clients effectively to enhance your real estate experience.</p>
+        
+        <!-- Client Table -->
+        <table>
+            <thead>
+                <tr>
+                    <th>Client ID</th>
+                    <th>Full Name</th>
+                    <th>Contact</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>John Doe</td>
+                    <td>+123456789</td>
+                    <td><button onclick="openEditModal(1)">Edit</button></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Jane Smith</td>
+                    <td>+987654321</td>
+                    <td><button onclick="openEditModal(2)">Edit</button></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Add Client Button -->
+        <button onclick="addClient()">Add New Client</button>
+        <p id="error-message" class="error-message">You do not have permission to add clients.</p>
+    </div>
+
+    <!-- Edit Client Modal -->
+    <div id="edit-client-modal">
+        <h2>Edit Client</h2>
+        <form>
+            <label for="client-name">Full Name:</label>
+            <input type="text" id="client-name" name="client-name" required>
+
+            <label for="client-contact">Contact:</label>
+            <input type="text" id="client-contact" name="client-contact" required>
+
+            <button type="button" class="save-btn" onclick="saveClient()">Save Changes</button>
+            <button type="button" class="cancel-btn" onclick="closeModal()">Cancel</button>
+        </form>
+    </div>
+</body>
+</html>

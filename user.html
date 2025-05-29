@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Page</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsLgHa-BurzmjEK4s_6SiaRRMaG7Yeudny5Q&s'); /* Replace with your image path */
+            background-size: cover;
+            background-position: center;
+            font-family: 'Roboto', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .user-container {
+            background: rgba(255, 255, 255, 0.85); /* Semi-transparent white background */
+            padding: 50px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Adds more depth */
+            text-align: center;
+        }
+        .user-container h1 {
+            margin-bottom: 20px;
+            color: #444;
+            font-size: 28px;
+        }
+        .user-container p {
+            margin-bottom: 30px;
+            color: #555;
+            font-size: 18px;
+        }
+        .user-container button {
+            padding: 12px 25px;
+            background-color: #007BFF;
+            border: none;
+            color: white;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+        .user-container button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+    <script>
+        function goToAgentPage() {
+            window.location.href = "agent.html";
+        }
+    </script>
+</head>
+<body>
+    <div class="user-container">
+        <h1>Welcome User!</h1>
+        <p>Your journey to managing real estate starts here.</p>
+        <button onclick="goToAgentPage()">Explore the Agent Section</button>
+    </div>
+</body>
+</html>

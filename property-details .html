@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Details - Real Estate Management</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f3f4f6; /* Light gray background */
+            color: #333; /* Dark text color */
+        }
+
+        header {
+            background: #007bff; /* Blue header */
+            color: white;
+            padding: 20px 10px;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .property-container {
+            max-width: 800px;
+            margin: 20px auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        .property-image {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .property-details h2 {
+            margin: 20px 0 10px;
+        }
+
+        .property-details p {
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+
+        .options {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .options button {
+            margin: 5px;
+            padding: 10px 20px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        .options button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Property Details</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="property-container">
+        <img src="https://source.unsplash.com/800x400/?house" alt="Property Image" class="property-image">
+        <div class="property-details">
+            <h2>Beautiful Family House</h2>
+            <p><strong>Location:</strong> New York, USA</p>
+            <p><strong>Price:</strong> $450,000</p>
+            <p><strong>Description:</strong> This stunning family house is located in a serene environment and offers spacious rooms, modern amenities, and a beautiful backyard.</p>
+        </div>
+        <div class="options">
+            <h3>What would you like to do?</h3>
+            <button onclick="handleOption('buy')">Buy</button>
+            <button onclick="handleOption('rent')">Rent</button>
+            <button onclick="handleOption('sold')">Sold</button>
+        </div>
+    </div>
+    <script>
+        function handleOption(option) {
+            // Redirect to appropriate pages based on the user's choice
+            if (option === 'buy') {
+                window.location.href = 'buy.html'; // Redirect to the buy page
+            } else if (option === 'rent') {
+                window.location.href = 'rent.html'; // Redirect to the rent page
+            } else if (option === 'sold') {
+                window.location.href = 'sold.html'; // Redirect to the sold confirmation page
+            }
+        }
+    </script>
+</body>
+</html>

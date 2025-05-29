@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agent Management</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4; /* Changed background to a light gray color */
+            font-family: 'Roboto', sans-serif;
+            color: #333;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            background: white; /* Solid white container background */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        .heading {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .heading h1 {
+            font-size: 32px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        .heading p {
+            font-size: 18px;
+            color: #555;
+        }
+        .agents {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .agent-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            text-align: center;
+        }
+        .agent-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .agent-card .info {
+            padding: 15px;
+        }
+        .agent-card .info h2 {
+            font-size: 20px;
+            margin: 10px 0;
+            color: #444;
+        }
+        .agent-card .info p {
+            margin: 5px 0;
+            color: #555;
+        }
+        /* Styling for the button */
+        .options {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .options button {
+            background-color: #007BFF; /* Blue color */
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .options button:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Page Heading -->
+        <div class="heading">
+            <h1>Meet Our Trusted Agents</h1>
+            <p>Our experienced agents are here to help you find the perfect property and assist with all your needs.</p>
+        </div>
+        <!-- Agent Listings -->
+        <div class="agents">
+            <!-- Agent 1 -->
+            <div class="agent-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_atWsBMbGfV3w01tt8iOXGcIvVW2X8QOw_Q&s" alt="Agent 2">
+                <div class="info">
+                    <h2>John Doe</h2>
+                    <p>Contact: +123456789</p>
+                    <p>Role: Senior Agent</p>
+                </div>
+            </div>
+
+            <!-- Agent 2 -->
+            <div class="agent-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBsLeIpcJQ_4HJXr73r0Y6yRkcXCYSTJtTQQ&s" alt="Agent 2">
+                <div class="info">
+                    <h2>Ms.Sterling</h2>
+                    <p>Contact: +987654321</p>
+                    <p>Role: Real Estate Specialist</p>
+                </div>
+            </div>
+
+            <!-- Agent 3 -->
+            <div class="agent-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-clIWQEtM33LFtHXlBLHpGFRjtVwTcasGlA&s" alt="Agent 3">
+                <div class="info">
+                    <h2>Director Vance</h2>
+                    <p>Contact: +135792468</p>
+                    <p>Role: Property Consultant</p>
+                </div>
+            </div>
+
+            <!-- Agent 4 -->
+            <div class="agent-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4FU3K9cwG5PWL4BOQmH2YmaiuHVkUiTR4OA&s" alt="Agent 4">
+                <div class="info">
+                    <h2>Emily Davis</h2>
+                    <p>Contact: +246813579</p>
+                    <p>Role: Sales Advisor</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+            <div class="options">
+<button onclick="window.location.href='http://localhost:8080/real_estate_db/property.php'">Property Listings</button>
+</div>
+            </br>
+</body>
+</html>

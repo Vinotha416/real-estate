@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transaction Management</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxuY2jaFP6ArGgOarToWoVNUtgP1QpK2p29Uh75Rgw5fr0u_-fs9-F5Xg&s') no-repeat center center/cover;
+      background-size: cover;
+      font-family: 'Roboto', sans-serif;
+      color: #333;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 20px auto;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+    .heading {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .heading h1 {
+      font-size: 32px;
+      margin-bottom: 10px;
+      color: #007BFF;
+    }
+    .heading p {
+      font-size: 18px;
+      color: #555;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+      background: white;
+    }
+    table, th, td {
+      border: 1px solid #ccc;
+    }
+    th, td {
+      padding: 12px;
+      text-align: left;
+    }
+    th {
+      background-color: #007BFF;
+      color: white;
+    }
+    td {
+      background-color: #f9f9f9;
+    }
+    .actions button {
+      padding: 8px 12px;
+      background-color: #28a745;
+      border: none;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 14px;
+      margin-right: 5px;
+    }
+    .actions .delete {
+      background-color: #dc3545;
+    }
+    /* Edit Modal Styling */
+    #edit-modal {
+      display: none;
+      position: fixed;
+      top: 20%;
+      left: 50%;
+      transform: translate(-50%, -20%);
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      z-index: 1000;
+      width: 400px;
+    }
+    #edit-modal label {
+      display: block;
+      margin-bottom: 8px;
+    }
+    #edit-modal input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    #edit-modal button {
+      padding: 8px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 14px;
+      margin-right: 10px;
+    }
+    #edit-modal .save-btn {
+      background-color: #007BFF;
+      color: white;
+    }
+    #edit-modal .cancel-btn {
+      background-color: #dc3545;
+      color: white;
+    }
+  </style>
+  <script>
+    function openEditModal(id, clientName, property, amount, status) {
+      document.getElementById('edit-client-name').value = clientName;
+      document.getElementById('edit-property').value = property;
+      document.getElementById('edit-amount').value = amount;
+      document.getElementById('edit-status').value = status;
+      document.getElementById('edit-modal').style.display = "block";
+    }
+    function closeEditModal() {
+      document.getElementById('edit-modal').style.display = "none";
+    }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <div class="heading">
+      <h1>Transaction Management</h1>
+      <p>View and manage all transactions seamlessly.</p>
+    </div>
+    <!-- Transactions Table -->
+    <table>
+      <thead>
+        <tr>
+          <th>Transaction ID</th>
+          <th>Client Name</th>
+          <th>Property</th>
+          <th>Amount</th>
+          <th>Status</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>TXN001</td>
+          <td>John Doe</td>
+          <td>Luxury Villa</td>
+          <td>$1,200,000</td>
+          <td>Completed</td>
+          <td class="actions">
+            <button onclick="openEditModal('TXN001', 'John Doe', 'Luxury Villa', '$1,200,000', 'Completed')">Edit</button>
+            <button class="delete" onclick="alert('Transaction deleted!')">Delete</button>
+          </td>
+        </tr>
+        <tr>
+          <td>TXN002</td>
+          <td>Jane Smith</td>
+          <td>Modern Apartment</td>
+          <td>$500,000</td>
+          <td>Pending</td>
+          <td class="actions">
+            <button onclick="openEditModal('TXN002', 'Jane Smith', 'Modern Apartment', '$500,000', 'Pending')">Edit</button>
+            <button class="delete" onclick="alert('Transaction deleted!')">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+  <!-- Edit Modal -->
+  <div id="edit-modal">
+    <h2>Edit Transaction</h2>
+    <form>
+      <label for="edit-client-name">Client Name:</label>
+      <input type="text" id="edit-client-name" required>
+      <label for="edit-property">Property:</label>
+      <input type="text" id="edit-property" required>
+      <label for="edit-amount">Amount:</label>
+      <input type="text" id="edit-amount" required>
+      <label for="edit-status">Status:</label>
+      <input type="text" id="edit-status" required>
+      <button type="button" class="save-btn" onclick="alert('Transaction updated!')">Save Changes</button>
+      <button type="button" class="cancel-btn" onclick="closeEditModal()">Cancel</button>
+    </form>
+  </div>
+</body>
+</html>

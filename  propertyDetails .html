@@ -1,0 +1,116 @@
+<?php
+include 'db.php'; // Include database connection
+
+// Fetch Properties from Database
+$sql = "SELECT * FROM properties";
+$stmt = $pdo->query($sql);
+$properties = $stmt->fetchAll(PDO::FETCH_ASSOC);
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Details - Real Estate Management</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('https://source.unsplash.com/1920x1080/?real-estate,building') no-repeat center center/cover;
+            color: white;
+        }
+        header {
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
+            padding: 20px 10px;
+            text-align: center;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .property-list {
+            max-width: 1200px;
+            margin: 20px auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+        .property-card {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            padding: 20px;
+        }
+        .property-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .property-card h2 {
+            margin: 10px 0;
+            color: #007bff;
+        }
+        .property-card p {
+            margin: 10px 0;
+            color: #333;
+        }
+        .options button {
+            margin: 5px;
+            padding: 10px 20px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+        .options button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Property Details</h1>
+        <nav>
+            <ul>
+                <li><a href="index.php">Home</a></li>
+                <li><a href="about.php">About Us</a></li>
+                <li><a href="contact.php">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="property-list">
+        <?php foreach ($properties as $property) { ?>
+            <div class="property-card">
+                <img src="<?= htmlspecialchars($property['image_url']) ?>" alt="<?= htmlspecialchars($property['property_name']) ?>">
+                <h2><?= htmlspecialchars($property['property_name']) ?></h2>
+                <p><strong>Location:</strong> <?= htmlspecialchars($property['location']) ?></p>
+                <p><strong>Price:</strong> $<?= number_format($property['price'], 2) ?></p>
+                <div class="options">
+                    <button onclick="window.location.href='payment.php'">Proceed to Payment</button>
+                </div>
+            </div>
+        <?php } ?>
+    </div>
+</body>
+</html>
+
+<?php $pdo = null; // Close connection ?>
